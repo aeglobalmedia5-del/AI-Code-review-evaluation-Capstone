@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: ai-review-evaluation
+Version: 1.0.0
+Requires-Python: >=3.11
+Requires-Dist: pydantic>=2.6
+Requires-Dist: python-dotenv>=1.0

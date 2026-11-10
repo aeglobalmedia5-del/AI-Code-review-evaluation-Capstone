@@ -1,0 +1,55 @@
+{
+  "valid_json_rate": 1.0,
+  "json_schema_valid_rate": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "rouge_l_f1": 1.0,
+  "hallucinated_comments": 0,
+  "secret_or_pii_leaks": 0,
+  "correct_tool_call_rate": 1.0,
+  "tool_correctness_by_agent": {
+    "baseline": {
+      "expected": 48,
+      "correct": 48,
+      "unexpected": 0,
+      "accuracy": 1.0
+    }
+  },
+  "handoff_correctness_rate": 1.0,
+  "task_completion_structural_proxy": 1.0,
+  "mean_tokens": 85.66666666666667,
+  "max_tokens_per_review": 92,
+  "p95_tokens": 92,
+  "total_tokens_estimate": 2056,
+  "mean_latency_ms": 0.4266276249893508,
+  "p95_latency_ms": 0.965639000014562,
+  "sample_count": 24,
+  "audit_log_completeness": {
+    "expected_events": 48,
+    "recorded_events": 48,
+    "required_fields_valid": true,
+    "secret_or_pii_leaks": 0,
+    "complete": true
+  },
+  "token_usage_by_agent": {
+    "single_agent": {
+      "mean_tokens": 85.66666666666667,
+      "max_tokens": 92,
+      "budget": 6000,
+      "within_budget": true
+    }
+  },
+  "mean_steps": 1.0,
+  "p95_steps": 1,
+  "ragas_trace_file": "reports/baseline_ragas_traces.jsonl",
+  "dataset_validation": {
+    "required_fields_present": true,
+    "no_duplicates": true,
+    "sample_count": 24,
+    "clean_count": 9,
+    "adversarial_count": 7,
+    "passed": true
+  },
+  "mode": "single"
+}

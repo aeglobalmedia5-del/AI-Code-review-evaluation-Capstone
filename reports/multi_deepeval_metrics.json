@@ -1,0 +1,8 @@
+{
+  "framework": "DeepEval",
+  "status": "not_run",
+  "reason": "OPENAI_API_KEY is not configured; no genuine judge score was produced.",
+  "threshold": 0.85,
+  "score": null,
+  "passed": null
+}

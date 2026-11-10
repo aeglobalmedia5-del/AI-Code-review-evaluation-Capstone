@@ -1,0 +1,138 @@
+{
+  "v1": {
+    "valid_json_rate": 1.0,
+    "json_schema_valid_rate": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "rouge_l_f1": 1.0,
+    "hallucinated_comments": 0,
+    "secret_or_pii_leaks": 0,
+    "correct_tool_call_rate": 1.0,
+    "tool_correctness_by_agent": {
+      "reader": {
+        "expected": 24,
+        "correct": 24,
+        "unexpected": 0,
+        "accuracy": 1.0
+      },
+      "reviewer": {
+        "expected": 24,
+        "correct": 24,
+        "unexpected": 0,
+        "accuracy": 1.0
+      }
+    },
+    "handoff_correctness_rate": 1.0,
+    "task_completion_structural_proxy": 1.0,
+    "mean_tokens": 125.66666666666667,
+    "max_tokens_per_review": 132,
+    "p95_tokens": 132,
+    "total_tokens_estimate": 3016,
+    "mean_latency_ms": 0.3653774166612796,
+    "p95_latency_ms": 1.193760999967708,
+    "sample_count": 24,
+    "audit_log_completeness": {
+      "expected_events": 48,
+      "recorded_events": 48,
+      "required_fields_valid": true,
+      "secret_or_pii_leaks": 0,
+      "complete": true
+    },
+    "token_usage_by_agent": {
+      "reader": {
+        "mean_tokens": 2.75,
+        "max_tokens": 6,
+        "budget": 6000,
+        "within_budget": true
+      },
+      "reviewer": {
+        "mean_tokens": 123.04166666666667,
+        "max_tokens": 126,
+        "budget": 6000,
+        "within_budget": true
+      }
+    },
+    "mean_steps": 2.0,
+    "p95_steps": 2,
+    "ragas_trace_file": "reports/prompt_v1_ragas_traces.jsonl",
+    "dataset_validation": {
+      "required_fields_present": true,
+      "no_duplicates": true,
+      "sample_count": 24,
+      "clean_count": 9,
+      "adversarial_count": 7,
+      "passed": true
+    },
+    "mode": "multi"
+  },
+  "v2": {
+    "valid_json_rate": 1.0,
+    "json_schema_valid_rate": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "rouge_l_f1": 1.0,
+    "hallucinated_comments": 0,
+    "secret_or_pii_leaks": 0,
+    "correct_tool_call_rate": 1.0,
+    "tool_correctness_by_agent": {
+      "reader": {
+        "expected": 24,
+        "correct": 24,
+        "unexpected": 0,
+        "accuracy": 1.0
+      },
+      "reviewer": {
+        "expected": 24,
+        "correct": 24,
+        "unexpected": 0,
+        "accuracy": 1.0
+      }
+    },
+    "handoff_correctness_rate": 1.0,
+    "task_completion_structural_proxy": 1.0,
+    "mean_tokens": 125.66666666666667,
+    "max_tokens_per_review": 132,
+    "p95_tokens": 132,
+    "total_tokens_estimate": 3016,
+    "mean_latency_ms": 0.3855082083390471,
+    "p95_latency_ms": 0.931711000021096,
+    "sample_count": 24,
+    "audit_log_completeness": {
+      "expected_events": 48,
+      "recorded_events": 48,
+      "required_fields_valid": true,
+      "secret_or_pii_leaks": 0,
+      "complete": true
+    },
+    "token_usage_by_agent": {
+      "reader": {
+        "mean_tokens": 2.75,
+        "max_tokens": 6,
+        "budget": 6000,
+        "within_budget": true
+      },
+      "reviewer": {
+        "mean_tokens": 123.04166666666667,
+        "max_tokens": 126,
+        "budget": 6000,
+        "within_budget": true
+      }
+    },
+    "mean_steps": 2.0,
+    "p95_steps": 2,
+    "ragas_trace_file": "reports/prompt_v2_ragas_traces.jsonl",
+    "dataset_validation": {
+      "required_fields_present": true,
+      "no_duplicates": true,
+      "sample_count": 24,
+      "clean_count": 9,
+      "adversarial_count": 7,
+      "passed": true
+    },
+    "mode": "multi"
+  },
+  "winner": "v2",
+  "justification": "Selected by higher finding F1; hallucinations are used as tie-breaker."
+}

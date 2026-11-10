@@ -1,0 +1,2 @@
+# Optional LLM-generated adversarial testing (requires OPENAI_API_KEY)
+deepteam>=0.1.0

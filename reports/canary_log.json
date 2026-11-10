@@ -1,0 +1,30 @@
+{
+  "sla_definition": "error rate <= 5% and p95 latency <= 5000 ms",
+  "stages": [
+    {
+      "traffic_percent": 10,
+      "requests": 10,
+      "error_rate": 0.0,
+      "p95_latency_ms": 729,
+      "sla": "PASS",
+      "action": "CONTINUE"
+    },
+    {
+      "traffic_percent": 50,
+      "requests": 50,
+      "error_rate": 0.0,
+      "p95_latency_ms": 868,
+      "sla": "PASS",
+      "action": "CONTINUE"
+    },
+    {
+      "traffic_percent": 100,
+      "requests": 100,
+      "error_rate": 0.02,
+      "p95_latency_ms": 848,
+      "sla": "PASS",
+      "action": "CONTINUE"
+    }
+  ],
+  "final_status": "COMPLETED"
+}

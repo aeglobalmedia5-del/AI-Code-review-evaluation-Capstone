@@ -1,0 +1,7 @@
+{
+  "framework": "DeepTeam",
+  "status": "not_run",
+  "generated_cases": 0,
+  "minimum_required": 10,
+  "reason": "Set RUN_DEEPTEAM_REDTEAM=true to run library-generated attacks."
+}

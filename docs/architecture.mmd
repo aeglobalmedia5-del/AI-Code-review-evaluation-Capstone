@@ -1,0 +1,25 @@
+flowchart TD
+    A[Review request + file name] --> C[Coordinator Agent]
+    C --> R[Reader Agent]
+    R --> FT[File Reader Tool]
+    FT -->|masked source code| C
+    C -->|handoff: source code| V[Reviewer Agent]
+    V --> LT[Linter Tool]
+    LT -->|lint findings| V
+    V -->|structured review JSON| C
+    C --> O[Final review response]
+
+    FT -. actual tool trace .-> RG[Ragas Agent / Tool Evaluation]
+    LT -. actual tool trace .-> RG
+    O -. task outcome + trajectory .-> DE[DeepEval TaskCompletionMetric]
+    RG --> Q[Release Quality Gate]
+    DE --> Q
+
+    A --> SEC[RBAC / Masking / Audit / Red-team]
+    SEC --> Q
+    O --> REP[SHA-256 Reproducibility Manifest]
+    REP --> Q
+    Q --> REL[GO / NO-GO Recommendation]
+    CAN[Canary SLA + Rollback] --> REL
+    DR[Drift Detection + Incident Note] --> REL
+    COMP[GDPR / SOC 2 / Data Residency Checklist] --> REL

@@ -1,0 +1,328 @@
+{
+  "baseline": {
+    "valid_json_rate": 1.0,
+    "json_schema_valid_rate": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "rouge_l_f1": 1.0,
+    "hallucinated_comments": 0,
+    "secret_or_pii_leaks": 0,
+    "correct_tool_call_rate": 1.0,
+    "tool_correctness_by_agent": {
+      "baseline": {
+        "expected": 48,
+        "correct": 48,
+        "unexpected": 0,
+        "accuracy": 1.0
+      }
+    },
+    "handoff_correctness_rate": 1.0,
+    "task_completion_structural_proxy": 1.0,
+    "mean_tokens": 85.66666666666667,
+    "max_tokens_per_review": 92,
+    "p95_tokens": 92,
+    "total_tokens_estimate": 2056,
+    "mean_latency_ms": 0.4266276249893508,
+    "p95_latency_ms": 0.965639000014562,
+    "sample_count": 24,
+    "audit_log_completeness": {
+      "expected_events": 48,
+      "recorded_events": 48,
+      "required_fields_valid": true,
+      "secret_or_pii_leaks": 0,
+      "complete": true
+    },
+    "token_usage_by_agent": {
+      "single_agent": {
+        "mean_tokens": 85.66666666666667,
+        "max_tokens": 92,
+        "budget": 6000,
+        "within_budget": true
+      }
+    },
+    "mean_steps": 1.0,
+    "p95_steps": 1,
+    "ragas_trace_file": "reports/baseline_ragas_traces.jsonl",
+    "dataset_validation": {
+      "required_fields_present": true,
+      "no_duplicates": true,
+      "sample_count": 24,
+      "clean_count": 9,
+      "adversarial_count": 7,
+      "passed": true
+    },
+    "mode": "single"
+  },
+  "multi_agent": {
+    "valid_json_rate": 1.0,
+    "json_schema_valid_rate": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "rouge_l_f1": 1.0,
+    "hallucinated_comments": 0,
+    "secret_or_pii_leaks": 0,
+    "correct_tool_call_rate": 1.0,
+    "tool_correctness_by_agent": {
+      "reader": {
+        "expected": 24,
+        "correct": 24,
+        "unexpected": 0,
+        "accuracy": 1.0
+      },
+      "reviewer": {
+        "expected": 24,
+        "correct": 24,
+        "unexpected": 0,
+        "accuracy": 1.0
+      }
+    },
+    "handoff_correctness_rate": 1.0,
+    "task_completion_structural_proxy": 1.0,
+    "mean_tokens": 125.66666666666667,
+    "max_tokens_per_review": 132,
+    "p95_tokens": 132,
+    "total_tokens_estimate": 3016,
+    "mean_latency_ms": 0.3515002499957139,
+    "p95_latency_ms": 1.221673000031842,
+    "sample_count": 24,
+    "audit_log_completeness": {
+      "expected_events": 48,
+      "recorded_events": 48,
+      "required_fields_valid": true,
+      "secret_or_pii_leaks": 0,
+      "complete": true
+    },
+    "token_usage_by_agent": {
+      "reader": {
+        "mean_tokens": 2.75,
+        "max_tokens": 6,
+        "budget": 6000,
+        "within_budget": true
+      },
+      "reviewer": {
+        "mean_tokens": 123.04166666666667,
+        "max_tokens": 126,
+        "budget": 6000,
+        "within_budget": true
+      }
+    },
+    "mean_steps": 2.0,
+    "p95_steps": 2,
+    "ragas_trace_file": "reports/multi_ragas_traces.jsonl",
+    "dataset_validation": {
+      "required_fields_present": true,
+      "no_duplicates": true,
+      "sample_count": 24,
+      "clean_count": 9,
+      "adversarial_count": 7,
+      "passed": true
+    },
+    "mode": "multi"
+  },
+  "prompt_ab_winner": "v2",
+  "redteam_passed": 10,
+  "redteam_total": 10,
+  "rbac": {
+    "reviewer_denied_restricted_file": true,
+    "admin_allowed_restricted_file": true,
+    "rbac_violations": 0,
+    "passed": true
+  },
+  "canary": {
+    "sla_definition": "error rate <= 5% and p95 latency <= 5000 ms",
+    "stages": [
+      {
+        "traffic_percent": 10,
+        "requests": 10,
+        "error_rate": 0.0,
+        "p95_latency_ms": 729,
+        "sla": "PASS",
+        "action": "CONTINUE"
+      },
+      {
+        "traffic_percent": 50,
+        "requests": 50,
+        "error_rate": 0.0,
+        "p95_latency_ms": 868,
+        "sla": "PASS",
+        "action": "CONTINUE"
+      },
+      {
+        "traffic_percent": 100,
+        "requests": 100,
+        "error_rate": 0.02,
+        "p95_latency_ms": 848,
+        "sla": "PASS",
+        "action": "CONTINUE"
+      }
+    ],
+    "final_status": "COMPLETED"
+  },
+  "drift": {
+    "baseline_quality": 0.94,
+    "drift_threshold": 0.84,
+    "drift_started_at_request": 11,
+    "drift_type": "data drift (synthetic traffic distribution shift)",
+    "explanation": "The quality drop appears in the incoming traffic stream while prompt and model versions remain unchanged. It is therefore classified as a traffic/data distribution drift rather than a code or configuration regression.",
+    "incident_note": {
+      "impact": "Review quality fell from the baseline to 0.68 after request 10.",
+      "root_cause": "Synthetic replay introduces a changed input distribution.",
+      "corrective_action": "Quarantine affected traffic, inspect the changed sample distribution, add representative golden cases, and rerun gates."
+    }
+  },
+  "deepeval": {
+    "framework": "DeepEval",
+    "status": "not_run",
+    "reason": "OPENAI_API_KEY is not configured; no genuine judge score was produced.",
+    "threshold": 0.85,
+    "score": null,
+    "passed": null
+  },
+  "deepteam_redteam": {
+    "framework": "DeepTeam",
+    "status": "not_run",
+    "generated_cases": 0,
+    "minimum_required": 10,
+    "reason": "Set RUN_DEEPTEAM_REDTEAM=true to run library-generated attacks."
+  },
+  "reproducibility": {
+    "created_at_utc": "2026-11-07T09:47:05.648114+00:00",
+    "python_version": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "files_sha256": {
+      "data/golden_dataset_v1.json": "e61665f871e5e7d6a2222ac45a9fce2877ed0b3c53c4db975fe36c30692bf5f5",
+      "requirements.txt": "87cf0b660820c818a780eb79a3252eaec7a85eb7554b68e9291e1cb77a3520fd",
+      "pyproject.toml": "97113922f69faf0abccefe5cb844c08e6c59b44278c5739d4eeef10abc02040d",
+      ".env.example": "7e7c826118dde4faeb4a0223c70c2271b4dc948f4f9c257d3e128d0a45cd3306",
+      "src/ai_review_eval/__init__.py": "27e8febb48ada44153ea2add9969a2c50a9831a74d9755fdd53c549a888b1cc2",
+      "src/ai_review_eval/agents.py": "85188ee8125778adbec244916b358086f55af6ecff46a3185ee338af152930ec",
+      "src/ai_review_eval/audit.py": "d85a5bbaafefab1754ef95b54ffe349b2866969870f503aad09373b8c7746bbc",
+      "src/ai_review_eval/compliance.py": "44f8654c9cf8115a9c4ae583f777140db010eb09a658c777fcc9259817672a9e",
+      "src/ai_review_eval/config.py": "48ae7f1e3d1823afc27daa3472366b1c4a2cbf70b2732e896e9c1d8354a5072c",
+      "src/ai_review_eval/dataset.py": "1dcffed7d8e01e7148177504f52d635e85f480ff77781d081157ae8df372314c",
+      "src/ai_review_eval/deepeval_evaluation.py": "fe6a8d51e4334ac639a68abc4d50c55dddcc03711ccfb61ec72191367e38e865",
+      "src/ai_review_eval/deepteam_redteam.py": "955af630931fdb446106c7c6b80bcee48c694e44683d2e484e6b6618626a81e3",
+      "src/ai_review_eval/deployment.py": "1bf37890a71d9e5f3620cc69363606d83753333701f8934bbfc61bcb74e9e3a4",
+      "src/ai_review_eval/drift.py": "0d39123cff505ffa3eaec2856aa25cd845ebd8f55cf460e1d204552023bcf02f",
+      "src/ai_review_eval/evaluation.py": "5d792e1331477fc447aa9265e0839a915a8e7cd4452cf81a32a18d656cec6a51",
+      "src/ai_review_eval/main.py": "dae2fde60de5d718d944214dcd7efaf07b78ba3a4855f3af42fee6542cd75257",
+      "src/ai_review_eval/mcp_server.py": "19230335e627d439f62253810c8d16c282e058f08d6a9a3573b05df18eb34954",
+      "src/ai_review_eval/metrics.py": "1aab20648f2ff2c228662aa97cb3d96210d71d46552847c69966e6be13859c8d",
+      "src/ai_review_eval/models.py": "2edce84e6c22cb7a850c1be9ae344db4ed3b7c62a4db052b8fc83d4b604f44be",
+      "src/ai_review_eval/quality_gate.py": "eac0cddd698e93e8280a5ae66dd99a0570c84e91b7d1c83e1d5ce2625dd59c11",
+      "src/ai_review_eval/ragas_evaluation.py": "71460145b2057ba88b1ba59b8fdd41a16ac931556dd0da3ae755a14f092559d1",
+      "src/ai_review_eval/redteam.py": "b515521c4f22b3d866c34c107f27ad94ae01be5e0c859ed4b3b56b9a23f4cb94",
+      "src/ai_review_eval/reproducibility.py": "404a2611d163495f3eb2101ee702129b23157182e582f517e4aba5695e865660",
+      "src/ai_review_eval/security.py": "df22d3786633e599adc37bd3ec57f8ea28094926b8f2c5aa558fda469bd82e91",
+      "src/ai_review_eval/security_checks.py": "08379bd67d21d7dcc48d655e674f98849e65b63678e138641f709cc8566ef77a",
+      "src/ai_review_eval/tools.py": "376d04322d744ebf0ad0ec988c1eeac77b268f8ba44af0c4a591889593ce79f1"
+    },
+    "prompt_sha256": {
+      "reviewer_v1": "aa16edd7dc185b1635d3038b5e6aee125962397c27d07f9aca8c63e4cbce5e02",
+      "reviewer_v2": "e176b2ef566d6896ec17ab17780ef1b11912a5b44e7a74b02e608a4c7d14aa8c"
+    },
+    "model_provider": "mock",
+    "model_checkpoint": "local-deterministic-reviewer",
+    "resolved_package_versions": {
+      "pydantic": "2.13.5",
+      "deepeval": "not-installed",
+      "ragas": "not-installed",
+      "deepteam": "not-installed",
+      "openai": "not-installed",
+      "pytest": "9.0.2"
+    },
+    "dataset_mutability": "golden_dataset_v1.json is treated as immutable after first evaluation",
+    "reproducibility_note": "Record the exact runtime, dependencies, prompts and golden dataset used for each submitted run."
+  },
+  "compliance": {
+    "disclaimer": "Self-assessment template only; not GDPR/SOC 2 certification or legal advice.",
+    "items": [
+      {
+        "framework": "GDPR",
+        "control": "Purpose limitation and documented lawful basis",
+        "status": "requires_organization_evidence",
+        "evidence_needed": "Controller decision, purpose register and lawful-basis assessment."
+      },
+      {
+        "framework": "GDPR",
+        "control": "Data minimization and retention schedule",
+        "status": "partially_addressed",
+        "evidence_needed": "Synthetic fixtures are used; define retention/deletion for real source code, logs and prompts."
+      },
+      {
+        "framework": "GDPR",
+        "control": "Data subject rights and processor agreements",
+        "status": "requires_organization_evidence",
+        "evidence_needed": "DPA, DSAR workflow and subprocessors list if personal data is processed."
+      },
+      {
+        "framework": "SOC 2",
+        "control": "Access control and least privilege",
+        "status": "demonstrated_in_local_harness",
+        "evidence_needed": "Attach RBAC test output; production identity integration remains required."
+      },
+      {
+        "framework": "SOC 2",
+        "control": "Audit logging and change traceability",
+        "status": "partially_addressed",
+        "evidence_needed": "Local JSONL audit and artifact hashes exist; central immutable storage and alerting remain required."
+      },
+      {
+        "framework": "SOC 2",
+        "control": "Change management and incident response",
+        "status": "partially_addressed",
+        "evidence_needed": "Attach prompt/dataset hashes and incident note; obtain approved organizational procedures."
+      },
+      {
+        "framework": "Data residency",
+        "control": "Document storage and processing regions",
+        "status": "requires_organization_evidence",
+        "evidence_needed": "Confirm hosting region, model provider region, backups, telemetry and subprocessors."
+      },
+      {
+        "framework": "Data residency",
+        "control": "Cross-border transfer safeguards",
+        "status": "requires_organization_evidence",
+        "evidence_needed": "Assess provider transfers and applicable contractual/legal safeguards."
+      },
+      {
+        "framework": "Security",
+        "control": "Secrets excluded from source control and masked in outputs",
+        "status": "demonstrated_in_local_harness",
+        "evidence_needed": "Attach secret/PII test output; integrate a production secret manager."
+      }
+    ],
+    "overall_status": "evidence_required",
+    "pending_count": 4
+  },
+  "release_gate": {
+    "status": "NO-GO",
+    "checks": {
+      "valid_json_ge_95_percent": true,
+      "json_schema_valid_ge_95_percent": true,
+      "correct_tool_calls_ge_90_percent": true,
+      "handoff_correctness_ge_95_percent": true,
+      "audit_log_complete": true,
+      "audit_logs_zero_secret_or_pii_leaks": true,
+      "per_agent_token_budgets": true,
+      "zero_hallucinated_comments": true,
+      "zero_secret_or_pii_leaks": true,
+      "deepeval_task_completion_ge_0_85": false,
+      "dataset_valid": true,
+      "p95_latency_within_budget": true,
+      "token_budget": true,
+      "rbac_violations_zero": true,
+      "successful_injections_zero": true,
+      "library_redteam_completed_with_10_plus_cases": false,
+      "efficiency_tokens_not_over_3x": true,
+      "efficiency_latency_not_over_3x": true
+    },
+    "deepeval_status": "not_run",
+    "failed_checks": [
+      "deepeval_task_completion_ge_0_85",
+      "library_redteam_completed_with_10_plus_cases"
+    ]
+  }
+}

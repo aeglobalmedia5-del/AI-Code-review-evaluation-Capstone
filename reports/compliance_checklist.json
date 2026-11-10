@@ -1,0 +1,61 @@
+{
+  "disclaimer": "Self-assessment template only; not GDPR/SOC 2 certification or legal advice.",
+  "items": [
+    {
+      "framework": "GDPR",
+      "control": "Purpose limitation and documented lawful basis",
+      "status": "requires_organization_evidence",
+      "evidence_needed": "Controller decision, purpose register and lawful-basis assessment."
+    },
+    {
+      "framework": "GDPR",
+      "control": "Data minimization and retention schedule",
+      "status": "partially_addressed",
+      "evidence_needed": "Synthetic fixtures are used; define retention/deletion for real source code, logs and prompts."
+    },
+    {
+      "framework": "GDPR",
+      "control": "Data subject rights and processor agreements",
+      "status": "requires_organization_evidence",
+      "evidence_needed": "DPA, DSAR workflow and subprocessors list if personal data is processed."
+    },
+    {
+      "framework": "SOC 2",
+      "control": "Access control and least privilege",
+      "status": "demonstrated_in_local_harness",
+      "evidence_needed": "Attach RBAC test output; production identity integration remains required."
+    },
+    {
+      "framework": "SOC 2",
+      "control": "Audit logging and change traceability",
+      "status": "partially_addressed",
+      "evidence_needed": "Local JSONL audit and artifact hashes exist; central immutable storage and alerting remain required."
+    },
+    {
+      "framework": "SOC 2",
+      "control": "Change management and incident response",
+      "status": "partially_addressed",
+      "evidence_needed": "Attach prompt/dataset hashes and incident note; obtain approved organizational procedures."
+    },
+    {
+      "framework": "Data residency",
+      "control": "Document storage and processing regions",
+      "status": "requires_organization_evidence",
+      "evidence_needed": "Confirm hosting region, model provider region, backups, telemetry and subprocessors."
+    },
+    {
+      "framework": "Data residency",
+      "control": "Cross-border transfer safeguards",
+      "status": "requires_organization_evidence",
+      "evidence_needed": "Assess provider transfers and applicable contractual/legal safeguards."
+    },
+    {
+      "framework": "Security",
+      "control": "Secrets excluded from source control and masked in outputs",
+      "status": "demonstrated_in_local_harness",
+      "evidence_needed": "Attach secret/PII test output; integrate a production secret manager."
+    }
+  ],
+  "overall_status": "evidence_required",
+  "pending_count": 4
+}

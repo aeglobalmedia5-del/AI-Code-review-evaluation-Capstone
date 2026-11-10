@@ -1,0 +1,12 @@
+{
+  "baseline_quality": 0.94,
+  "drift_threshold": 0.84,
+  "drift_started_at_request": 11,
+  "drift_type": "data drift (synthetic traffic distribution shift)",
+  "explanation": "The quality drop appears in the incoming traffic stream while prompt and model versions remain unchanged. It is therefore classified as a traffic/data distribution drift rather than a code or configuration regression.",
+  "incident_note": {
+    "impact": "Review quality fell from the baseline to 0.68 after request 10.",
+    "root_cause": "Synthetic replay introduces a changed input distribution.",
+    "corrective_action": "Quarantine affected traffic, inspect the changed sample distribution, add representative golden cases, and rerun gates."
+  }
+}

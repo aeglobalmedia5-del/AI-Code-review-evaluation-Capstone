@@ -1,0 +1,12 @@
+{"timestamp": "2026-11-07T09:35:32.575820+00:00", "role": "reviewer", "tool": "file_reader", "target": "production.env", "decision": "deny", "details": ""}
+{"timestamp": "2026-11-07T09:35:32.576169+00:00", "role": "admin", "tool": "file_reader", "target": "production.env", "decision": "allow", "details": ""}
+{"timestamp": "2026-11-07T09:35:46.975802+00:00", "role": "reviewer", "tool": "file_reader", "target": "production.env", "decision": "deny", "details": ""}
+{"timestamp": "2026-11-07T09:35:46.975847+00:00", "role": "admin", "tool": "file_reader", "target": "production.env", "decision": "allow", "details": ""}
+{"timestamp": "2026-11-07T09:44:20.472266+00:00", "role": "reviewer", "tool": "file_reader", "target": "production.env", "decision": "deny", "details": ""}
+{"timestamp": "2026-11-07T09:44:20.472780+00:00", "role": "admin", "tool": "file_reader", "target": "production.env", "decision": "allow", "details": ""}
+{"timestamp": "2026-11-07T09:46:01.158883+00:00", "role": "reviewer", "tool": "file_reader", "target": "production.env", "decision": "deny", "details": ""}
+{"timestamp": "2026-11-07T09:46:01.158968+00:00", "role": "admin", "tool": "file_reader", "target": "production.env", "decision": "allow", "details": ""}
+{"timestamp": "2026-11-07T09:46:30.997746+00:00", "role": "reviewer", "tool": "file_reader", "target": "production.env", "decision": "deny", "details": ""}
+{"timestamp": "2026-11-07T09:46:30.997911+00:00", "role": "admin", "tool": "file_reader", "target": "production.env", "decision": "allow", "details": ""}
+{"timestamp": "2026-11-07T09:47:05.638312+00:00", "role": "reviewer", "tool": "file_reader", "target": "production.env", "decision": "deny", "details": ""}
+{"timestamp": "2026-11-07T09:47:05.638447+00:00", "role": "admin", "tool": "file_reader", "target": "production.env", "decision": "allow", "details": ""}
