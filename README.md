@@ -1,9 +1,8 @@
 Overview
 ========
 
-The AI Code Review Evaluation Dashboard is an end-to-end AI Evaluation & Governance platform developed as a capstone project. The solution evaluates Large Language Model (LLM) outputs using automated quality metrics, governance controls, security validation, deployment readiness checks, and production quality gates.
-
-The project provides a Streamlit-based dashboard that visualizes evaluation results, generated reports, architecture, and production recommendations.
+AI Code Review Evaluation Dashboard
+Capstone project demonstrating AI-powered code review, quality evaluation, governance validation, deployment readiness assessment, and LLM output monitoring using Gemini, DeepEval, RAGAS, and Streamlit.
 
 Features
 ========
