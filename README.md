@@ -149,6 +149,13 @@ GO TO PRODUCTION
 
 All evaluation, governance, security, compliance, monitoring, and deployment readiness checks have been successfully completed.
 
+Screenshots
+<img width="959" height="266" alt="image" src="https://github.com/user-attachments/assets/12c3b1f1-8eea-46b0-8766-7d9341d39091" />
+<img width="952" height="372" alt="Quality Gate results" src="https://github.com/user-attachments/assets/ab971041-0f6f-4bb7-a212-9cd4eb05a4a2" />
+<img width="941" height="341" alt="Evaluation Metrics Dashboard" src="https://github.com/user-attachments/assets/b14f97f0-82eb-4d49-a22d-c0ce7164b4ac" />
+
+
+
 Author
 
 Dhaanvaanth S
